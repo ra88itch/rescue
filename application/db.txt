@@ -1,0 +1,4 @@
+Database:	thairesc_resc
+Host:		localhost
+Username:	thairesc_resc
+Password:	UqrqXe81ex
