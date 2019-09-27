@@ -1,31 +1,34 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><footer class="footer" style="display:none;">
-		<div class="container">
-			<div class="row">
-				<div class="col-4 col-sm-2 footer-btn-cancel do-go-back">
-				CANCEL
+			<footer class="footer">
+				<div class="container-fluid">
+					<p class="copyright pull-right">
+						&copy; <script>document.write(new Date().getFullYear())</script> <a href="<?php echo $root; ?>">TH-RESCUE.COM</a>, Manage your rescue team
+					</p>
 				</div>
-				<div class="col-8 col-sm-4 col-sm-offset-6 footer-btn-save form-btn-save do-submit">
-				SAVE
-				</div>
-			</div>
+			</footer>
+
 		</div>
-	</footer>
-</div>
+	</div>
+
+<!--   Core JS Files   -->	
+<?php
+if(isset($js_var)){
+	$html_js_var = '<script>';
+	
+	$html_js_var .= 'var root = "'.$root.'";';
+
+	foreach($js_var AS $key=>$value){
+		$html_js_var .= 'var '.$key.' = '.$value.';';
+	}
+	$html_js_var .= '</script>';
+	echo $html_js_var;
+}
+?>
+<script src="<?php echo $root; ?>assets/js/jquery-3.3.1.min.js" type="text/javascript"></script>
+<script src="<?php echo $root; ?>assets/js/bootstrap.min.js" type="text/javascript"></script>	
+<?php
+foreach($js AS $jsrow){
+	echo '<script src="'.$root.'assets/js/'.$jsrow.'"></script>';
+}
+?>
 </body>
-	<!--   Core JS Files   -->
-	<script type="text/javascript">
-	var root = "<?php if(isset($root)){ echo $root; }else{ echo ''; } ?>";
-	</script>
-    <script type="text/javascript" src="<?php echo $root; ?>assets/js/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="<?php echo $root; ?>assets/js/jquery.validate.min.js"></script>
-	<script type="text/javascript" src="<?php echo $root; ?>assets/js/jquery.easy-autocomplete.min.js"></script>
-	<script type="text/javascript" src="<?php echo $root; ?>assets/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="<?php echo $root; ?>assets/js/bootstrap-select.min.js"></script>
-	<script type="text/javascript" src="<?php echo $root; ?>assets/js/moment.js"></script>
-	<script type="text/javascript" src="<?php echo $root; ?>assets/js/bootstrap-datetimepicker.min.js"></script>
-	<script type="text/javascript" src="<?php echo $root; ?>assets/js/zeroupload.js"></script>
-	<script type="text/javascript" src="<?php echo $root; ?>assets/js/script.js"></script>
-	<script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);</script>
 </html>

@@ -176,7 +176,7 @@ class User_model extends CI_Model {
 		$return = false;
 
 		$this->db->select('*');
-		$this->db->from('rescue');	
+		$this->db->from('team');	
 		$query = $this->db->get();	
 		if ($query->num_rows() > 0) {			
 			if($id!=''){
@@ -187,4 +187,54 @@ class User_model extends CI_Model {
 		}
 		return $return;
 	}
+
+	
+	private function set_user_cookie($user) {
+        $user = $this->encrypt->encode(serialize($user));
+		$expires = ( 60 * 60 * 24 * 365) / 12;
+		$expires = '0';
+
+		set_cookie('thresc', $user, $expires);
+    }
+
+	function get_user_cookie() {
+        $user = get_cookie('thresc', true);
+        if ($user != null) {
+            $user = $this->encrypt->decode($user);
+            $user = @unserialize($user);
+            return $user;
+        }
+        return false;
+    }
+
+
+    /*********************************************/
+	/*****  COMPLETE CMS STRUCTURE FUNCTION  *****/
+	/*********************************************/
+	function unset_user_cookie() {
+        delete_cookie('thresc');
+    }
+
+	
+	private function set_cmsuser_cookie($user) {
+        $user = $this->encrypt->encode(serialize($user));
+		$expires = ( 60 * 60 * 24 * 365) / 12;
+		$expires = '0';
+
+		set_cookie('cmsthresc', $user, $expires);
+    }
+
+	function get_cmsuser_cookie() {
+        $user = get_cookie('cmsthresc', true);
+        if ($user != null) {
+            $user = $this->encrypt->decode($user);
+            $user = @unserialize($user);
+            return $user;
+        }
+        return false;
+    }
+
+    function unset_cmsuser_cookie() {
+        delete_cookie('cmsthresc');
+    }
 }
