@@ -52,3 +52,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'login';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+
+$route['admin'] = 'admin/login';
+$route['forget-password']		= 'forget_password';
+$route['team/no-profile']		= 'team/noProfile';
+$route['team/not-your-team']	= 'team/notYourTeam';
+$route['team-account']			= 'teamAccount';

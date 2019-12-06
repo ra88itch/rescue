@@ -14,7 +14,6 @@ class Logout extends CI_Controller {
 
 	// 100% Complete
 	public function index(){
-		$this->load->model('system_model', '', TRUE);
 		$this->system_model->unset_user_cookies();
 		redirect();
 	}

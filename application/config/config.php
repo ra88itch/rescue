@@ -522,11 +522,33 @@ $config['rewrite_short_tags'] = FALSE;
 */
 $config['proxy_ips'] = '';
 
+$css = array(
+			'bootstrap.min.css', 
+			'bootstrap-select.min.css',
+			'animate.min.css', 
+			'light-bootstrap-dashboard.css', 
+			'pe-icon-7-stroke.css', 
+			'style.css'
+		);
+$js = array( 
+			'bootstrap-select.min.js',
+			'moment.js',
+			'bootstrap-datetimepicker.min.js',
+			'bootstrap-checkbox-radio-switch.js', 
+			'chartist.min.js', 
+			'bootstrap-notify.js', 
+			'light-bootstrap-dashboard.js',
+			'script.js'
+		);
+
 $config['response'] = array(
 		'method' => '',
 		'errorCode' => '0',
 		'errorDesc' => 'Success',
+		'errorAction' => 'success',
 		'root' => $config['base_url'],
-		'title' => 'ว.4 เขต',
+		'title' => 'RESCUE TEAM MANAGEMENT',
 		'status_txt' => array('Disable', 'Enable'),
+		'css' => $css,
+		'js' => $js
 	);
