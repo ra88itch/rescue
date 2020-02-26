@@ -16,6 +16,7 @@ class Login extends CI_Controller {
 
 		$this->load->model('system_model', '', TRUE);
 		$user = $this->system_model->get_user_cookie();
+
 		if($user != false){
 			redirect('team');
 		}

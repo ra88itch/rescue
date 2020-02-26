@@ -52,7 +52,10 @@ class System_model extends CI_Model {
         delete_cookie('threscmanager');
     }
 
-	function convert_object($object, $obj_name = 'name'){		
+	function convert_object($object, $obj_name = 'name'){
+		if($object === false){
+			return false;
+		}
 		$array		= json_decode(json_encode($object), TRUE);
 		$id			= array_column($array, 'id');
 		if($obj_name == 'all'){

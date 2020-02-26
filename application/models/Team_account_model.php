@@ -13,7 +13,7 @@ class Team_account_model extends CI_Model {
 
 	function get_lists($user, $get_param=false, $index=1){
 		$return = false;
-		$index = ( $index - 1 ) * 6;
+		$index = ( $index - 1 ) * 20;
 
 		if($user->type > 10){
 			$where_params['team_id'] = $user->team_id;

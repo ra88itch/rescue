@@ -17,11 +17,11 @@
 			<li<?php if(isset($current_location) && $current_location == 'teamAccount'){ echo ' class="active"'; } ?>>
 				<a href="<?php echo $root; ?>teamAccount">
 					<i class="pe-7s-id"></i>
-					<p>Team Account</p>
+					<p>Call Sign</p>
 				</a>
 			</li>
-			<li<?php if(isset($current_location) && $current_location == 'teamTraining'){ echo ' class="active"'; } ?>>
-				<a href="<?php echo $root; ?>teamTraining">
+			<li<?php if(isset($current_location) && $current_location == 'training'){ echo ' class="active"'; } ?>>
+				<a href="<?php echo $root; ?>training">
 					<i class="pe-7s-study"></i>
 					<p>Training</p>
 				</a>

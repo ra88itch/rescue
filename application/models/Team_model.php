@@ -150,6 +150,11 @@ class Team_model extends CI_Model {
 			'insurance' => json_encode($post['profile_detail']['insurance'])
 		);
 		$this->db->insert('profile_detail', $profile_detail_param);
+
+		$profile_detail_vehicle_param = array(
+			'profile_id'		=> $profile_id
+		);
+		$this->db->insert('profile_detail_vehicle', $profile_detail_vehicle_param);
 	}
 
 	function update_profile($post){	

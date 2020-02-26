@@ -3,15 +3,15 @@ $(document).ready(function(){
 		var thisID = $(this).attr('id');
 		switch(thisID) {
 			case 'form-submit-create':
-				var form_action = root+'teamAccount/create';
+				var form_action = root+current_location+'/create';
 				break;
 
 			case 'form-submit-edit':
-				var form_action = root+'teamAccount/edit/'+detail_id;
+				var form_action = root+current_location+'/edit/'+detail_id;
 				break;
 
 			default:
-				var form_action = root+'teamAccount/lists';
+				var form_action = root+current_location+'/lists';
 		} 
 
 		$('#form-submit').attr('action', form_action);

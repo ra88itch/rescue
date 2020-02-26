@@ -86,7 +86,7 @@ class TeamAccount extends CI_Controller {
 //		var_dump($response);
 //		echo '</pre>';
 
-		$this->load->view('teamAccount', $response);
+		$this->load->view('teamAccount/lists', $response);
     }
 
 	function create(){
@@ -107,7 +107,7 @@ class TeamAccount extends CI_Controller {
 		$response['team'] = $structure->team;
 
 		$response['user'] = $this->user;
-		$this->load->view('teamAccountForm', $response);	
+		$this->load->view('teamAccount/form', $response);	
 	}
 
 	function edit($team_account_id = false){
@@ -134,7 +134,8 @@ class TeamAccount extends CI_Controller {
 		$response['team'] = $structure->team;
 	
 		$response['user'] = $this->user;
-		$this->load->view('teamAccountForm', $response);	
+		$response['referrer'] = $this->agent->referrer();
+		$this->load->view('teamAccount/form', $response);	
 	}
 
 	private function create_pagination($response){

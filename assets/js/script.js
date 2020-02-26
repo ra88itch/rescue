@@ -9,4 +9,7 @@ $(document).ready(function(){
 			event.preventDefault();
 		}
 	}, false);
+	document.addEventListener("contextmenu", function(event){
+		event.preventDefault();
+	}, false);
 });

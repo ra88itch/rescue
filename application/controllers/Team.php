@@ -104,7 +104,7 @@ class Team extends CI_Controller {
 
 		$response['pagination'] = $this->create_pagination($response);	
 		$response['user'] = $this->user;
-		$this->load->view('team', $response);
+		$this->load->view('team/lists', $response);
     }
 
 	function create(){
@@ -132,7 +132,7 @@ class Team extends CI_Controller {
 		$response['training'] = $structure->team_training;
 
 		$response['user'] = $this->user;
-		$this->load->view('teamForm', $response);	
+		$this->load->view('team/form', $response);	
 	}
 
 	function view($team_profile=false){
@@ -171,10 +171,12 @@ class Team extends CI_Controller {
 		$response['training'] = $this->system_model->convert_object($structure->team_training, 'all');
 	
 		$response['user'] = $this->user;
-		$this->load->view('teamView', $response);	
+		$this->load->view('team/view', $response);	
 	}
 
 	function edit($team_profile=false){
+
+
 		if($team_profile==false){
 			redirect('team/no-profile');
 		}
@@ -210,7 +212,9 @@ class Team extends CI_Controller {
 		$response['training'] = $structure->team_training;
 	
 		$response['user'] = $this->user;
-		$this->load->view('teamForm', $response);	
+		$response['referrer'] = $this->agent->referrer();
+		
+		$this->load->view('team/form', $response);	
 	}
 
 	function noProfile(){
